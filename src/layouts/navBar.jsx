@@ -12,7 +12,7 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className='bg-white flex items-center justify-between px-14 py-8 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] fixed right-0 left-0 top-0'>
+            <nav className='bg-white flex items-center justify-between px-14 py-8 shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] fixed right-0 left-0 top-0 z-50'>
             <input type="checkbox" id='switcher' className='d-none' />
             <label htmlFor="switcher" className='menu-icon' >&#9776;</label>
                 {/* logo div */}
