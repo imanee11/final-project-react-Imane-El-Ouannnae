@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { images } from '../../constants';
 import { useNavigate } from 'react-router-dom';
-
+import { products } from '../../constants/data';
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -132,6 +132,77 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
+            </section>
+
+
+            {/* section 2 : FEATURED PRODUCTS */}
+            <section className='featured-products pt-28 '>
+                <p className='text-center text-[30px] text-[#222222] font-bold ' >FEATURED PRODUCTS</p>
+                {/* carousel */}
+                <Slider {...settings}>
+                    {/* first slide */}
+                    <div className=''>
+                        <div className='flex items-center justify-center gap-9 w-[100%] pt-10 '>
+                            {
+                                products.slice(0,4).map((e , i) => (
+                                <div className='flex flex-col w-[22%] '>
+                                    <div className='relative group'>
+                                        <img src={images[e.img]} alt="" className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75  ' />
+                                        <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                            <button className='bg-white py-3 px-12 w-[200px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
+                                        </div>
+                                    </div>
+                                    <div className='pt-5'>
+                                        <p className='text-[#555] pb-2 '>{e.name}</p>
+                                        <p className='text-[#555] pb-2 '>${e.price}</p>
+                                    </div>
+                                </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                    
+                    {/* second slide */}
+                    <div className=''>
+                        <div className='flex items-center justify-center gap-9 w-[100%] pt-10 '>
+                            {
+                                products.slice(4).map((e, i) => (
+                                <div className='flex flex-col w-[22%] '>
+                                    <div className='relative group'>
+                                        <img src={images[e.img]} alt="" className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75  ' />
+                                        {
+                                            e.sale && (
+                                                <div className='absolute top-3 left-2 bg-[#e65540] text-white px-5 py-1 rounded-full  text-[13px] '>
+                                                    Sale
+                                                </div>
+                                            )
+                                        }
+                                        <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                                            <button className='bg-white py-3 px-12 w-[200px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
+                                        </div>
+                                    </div>
+                                    <div className='pt-5'>
+                                        <p className='text-[#555] pb-2 '>{e.name}</p>
+                                        {
+                                            e.sale ? (
+                                                <div className='flex gap-3'>
+                                                    <p className='text-[#555] pb-2 line-through'>${e.price}</p>
+                                                    <p className='text-[#e65540] '>${e.reduction}</p>
+                                                </div>
+                                            ) : (
+                                               <p className='text-[#555] pb-2'>${e.price}</p> 
+                                            )
+                                        }
+                                        
+                                    </div>
+                                </div>
+                                ))
+                            }
+
+                        </div>
+                    </div>
+                </Slider>
+
             </section>
 
         </div>
