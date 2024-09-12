@@ -1,3 +1,3 @@
-// export default {
-//     idk : require ('')
-// }
+export default {
+    logo : require ('../assets/images/logo.png.webp')
+}
