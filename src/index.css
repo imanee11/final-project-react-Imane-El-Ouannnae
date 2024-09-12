@@ -75,4 +75,15 @@
     .smallDivs{
         width: 90%;
     }
+
+    /*? section 3 */
+    .itemsDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .itemsDiv div{
+        width: 90%;
+    }
 }

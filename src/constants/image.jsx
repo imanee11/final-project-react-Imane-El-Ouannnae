@@ -18,7 +18,10 @@ export default {
     img6 : require ('../assets/images/img6.webp'),
     img7 : require ('../assets/images/img7.webp'),
     img8 : require ('../assets/images/img8.webp'),
-
-
-
+    banner8 : require ('../assets/images/banner-08.jpg'),
+    item1 : require ('../assets/images/item1.jpg'),
+    item2 : require ('../assets/images/item2.jpg'),
+    item3 : require ('../assets/images/item3.jpg'),
+    item4 : require ('../assets/images/item4.jpg'),
+    item5 : require ('../assets/images/item5.jpg')
 }

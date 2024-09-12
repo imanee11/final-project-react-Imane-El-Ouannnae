@@ -1,5 +1,7 @@
 import products from '../json/products.json'
-export {products}
+
+import items from '../json/items.json';
+export {products , items}
 
 
 

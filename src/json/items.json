@@ -1,0 +1,27 @@
+[
+    {
+        "image": "item1",
+        "name": "Gold Watch",
+        "price": 49.99
+    },
+    {
+        "image": "item2",
+        "name": "White Watch ",
+        "price": 10.99
+    },
+    {
+        "image": "item3",
+        "name": "Black Sunglasses",
+        "price": 20.99
+    },
+    {
+        "image": "item4",
+        "name": "Black Sunglasses",
+        "price": 10.50
+    },
+    {
+        "image": "item5",
+        "name": "Necklace",
+        "price": 30.99
+    }
+]

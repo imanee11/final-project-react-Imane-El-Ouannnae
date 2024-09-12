@@ -5,6 +5,9 @@ import Slider from 'react-slick';
 import { images } from '../../constants';
 import { useNavigate } from 'react-router-dom';
 import { products } from '../../constants/data';
+import { items } from '../../constants/data';
+
+
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -35,6 +38,11 @@ function SampleNextArrow(props) {
 
 const HomePage = () => {
     let navigate = useNavigate();
+
+    //! to select a random product
+    const randomItemsIndex = Math.floor(Math.random() * items.length);
+    const randomItems = items[randomItemsIndex];
+
     const settings = {
         dots: true,
         infinite: true,
@@ -136,7 +144,7 @@ const HomePage = () => {
 
 
             {/* section 2 : FEATURED PRODUCTS */}
-            <section className='featured-products pt-28 '>
+            <section className='featured-products pt-28 pb-32 '>
                 <p className='text-center text-[30px] text-[#222222] font-bold ' >FEATURED PRODUCTS</p>
                 {/* carousel */}
                 <Slider {...settings}>
@@ -203,6 +211,51 @@ const HomePage = () => {
                     </div>
                 </Slider>
 
+            </section>
+
+
+            {/* section 3 */}
+            <section className='pt-16 pb-16 bg-[#F2F2F2] '>
+                {/* left part */}
+                <div className='itemsDiv flex justify-center gap-10'>
+                    <div className='w-[46%]  relative overflow-hidden'>
+                        <img src={images.banner8} alt=""className='w-[100%] transition-all duration-300 ease-in-out hover:scale-110' />
+                        <div className='absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 text-center'>
+                            <p className='text-white text-[30px] font-semibold '>The Beauty</p>
+                            <p className='text-white text-[50px] font-bold'>LOOKBOOK</p>
+                            <p className='text-white hover:underline cursor-pointer'>VIEW COLLECTION</p>
+                        </div>
+
+                    </div>
+
+                    {/* right part */}
+                    <div className='w-[46%] bg-white overflow-hidden flex flex-col justify-center items-center  '>
+                        <img src={images[randomItems.image]} alt="" className='w-[40%] h-[250px] object-cover transition-all duration-300 ease-in-out hover:scale-110'/>
+                        <div className='text-center flex flex-col justify-center items-center pt-4'>
+                            <p className='text-[#555] pb-2 text-[18px] '>{randomItems.name}</p>
+                            <p className='text-[#555] pb-2 text-[18px]'>${randomItems.price}</p>
+                            <div className='flex gap-4 pb-4'>
+                                <div className='flex flex-col justify-center items-center border-[1px] border-gray-400 p-2'>
+                                    <p className='text-[#555] text-[18px] '>-2082</p>
+                                    <p className='text-[#999]'>days</p>
+                                </div>
+                                <div className='flex flex-col justify-center items-center border-[1px] border-gray-400 p-2'>
+                                    <p className='text-[#555] text-[18px] '>-20</p>
+                                    <p className='text-[#999]'>hrs</p>
+                                </div>
+                                <div className='flex flex-col justify-center items-center border-[1px] border-gray-400 p-2'>
+                                    <p className='text-[#555] text-[18px] '>-53</p>
+                                    <p className='text-[#999]'>mins</p>
+                                </div>
+                                <div className='flex flex-col justify-center items-center border-[1px] border-gray-400 p-2'>
+                                    <p className='text-[#555] text-[18px] '>-41</p>
+                                    <p className='text-[#999]'>secs</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </section>
 
         </div>
