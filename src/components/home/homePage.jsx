@@ -82,9 +82,9 @@ const HomePage = () => {
 
             {/* section 1 */}
             <section className='section1'>
-                <div className='flex items-center justify-center gap-8'>
+                <div className='imagesDiv flex items-center justify-center gap-8'>
                     {/* left */}
-                    <div className='w-[30%] flex flex-col gap-8'>
+                    <div className='smallDivs w-[30%] flex flex-col gap-8'>
                         <div className='relative overflow-hidden'>
                             <img src={images.banner2} alt="" className='w-[100%] h-[530px] object-cover transition-all duration-300 ease-in-out hover:scale-110 ' />
                             <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 '>
@@ -100,7 +100,7 @@ const HomePage = () => {
                     </div>
 
                     {/* middle */}
-                    <div className='w-[30%] flex flex-col gap-8 '>
+                    <div className='smallDivs w-[30%] flex flex-col gap-8 '>
                         <div className='relative overflow-hidden'>
                             <img src={images.watch} alt="" className='w-[100%] h-[350px] object-cover transition-all duration-300 ease-in-out hover:scale-110' />
                             <div className='absolute top-[85%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 '>
@@ -117,7 +117,7 @@ const HomePage = () => {
                     </div>
 
                     {/* right */}
-                    <div className='w-[30%] flex flex-col gap-8'>
+                    <div className='smallDivs w-[30%] flex flex-col gap-8'>
                         <div className='relative overflow-hidden'>
                             <img src={images.banner4} alt="" className='w-[100%] h-[530px] object-cover transition-all duration-300 ease-in-out hover:scale-110'/>
                             <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 '>
