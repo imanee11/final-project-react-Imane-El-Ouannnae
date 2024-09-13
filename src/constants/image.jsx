@@ -30,4 +30,5 @@ export default {
     aboutbanner : require ('../assets/images/about_top.webp'),
     blogbanner : require ('../assets/images/blog_top.webp'),
     shopbanner : require ('../assets/images/banner.webp'),
+    avatar : require ('../assets/images/avatar.webp'),
 }

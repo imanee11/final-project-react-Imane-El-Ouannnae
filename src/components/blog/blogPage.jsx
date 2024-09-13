@@ -4,8 +4,11 @@ import { blog } from '../../constants/data';
 import { FaSearch } from 'react-icons/fa'
 import { products } from '../../constants/data';
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const BlogPage = () => {
+    let navigate = useNavigate();
+
     return (
         <>
         <div className='pt-[14vh]'> 
@@ -28,12 +31,12 @@ const BlogPage = () => {
                             blog.map((e) => (
                             <div className='w-[100%] overflow-hidden'>
                                 <div className='overflow-hidden relative'>
-                                    <img src={images[e.pic]} alt="" className='w-[100%] transition-all duration-300 ease-in-out hover:scale-110'/>
+                                    <img onClick={() => navigate(`/blog/${e.id}`)} src={images[e.pic]} alt="" className='w-[100%] transition-all duration-300 ease-in-out hover:scale-110'/>
                                     <div className='absolute top-[90%]'>
                                         <p className='bg-[#111] text-[#fff] py-2 px-4 '>28 DEC, 2017</p>
                                     </div>
                                 </div>
-                                <p className='text-[#333] font-semibold text-[18px] py-4 '>{e.title} </p>
+                                <p onClick={() => navigate(`/shop/${e.id}`)} className='text-[#333] font-semibold text-[18px] py-4 '>{e.title} </p>
                                 <p className='text-[#888] pb-4 '>{e.by}</p>
                                 <p className='text-[#888]'>{e.description}</p>
                                 <p className='flex items-center gap-2 pt-3 text-[#555] transition duration-500 hover:text-[#e65540] cursor-pointer'>Continue Reading <FaLongArrowAltRight/></p>
@@ -64,7 +67,7 @@ const BlogPage = () => {
                                         <img src={images[e.img]} alt="" className='w-[100%]' />
                                     </div>
                                     <div>
-                                        <p className='text-[#555] pb-2 transition duration-500 hover:text-[#e65540] cursor-pointer'>{e.name}</p>
+                                        <p onClick={() => navigate(`/shop/${e.id}`)} className='text-[#555] pb-2 transition duration-500 hover:text-[#e65540] cursor-pointer'>{e.name}</p>
                                         <p className='text-[#555] text-[13px] pb-2'>${e.price}</p>
                                     </div>
                                 </div>

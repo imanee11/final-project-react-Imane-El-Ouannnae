@@ -267,11 +267,11 @@ const HomePage = () => {
                 <div className='blogDivs flex justify-center pt-16 gap-8 '>
                     {
                         blog.map((e) => (
-                        <div className='w-[30%] overflow-hidden'>
+                        <div key={e.id}  className='w-[30%] overflow-hidden'>
                             <div className='overflow-hidden'>
-                                <img src={images[e.pic]} alt="" className='w-[100%] transition-all duration-300 ease-in-out hover:scale-110'/>
+                                <img onClick={() => navigate(`/blog/${e.id}`)} src={images[e.pic]} alt="" className='w-[100%] transition-all duration-300 ease-in-out hover:scale-110'/>
                             </div>
-                            <p className='text-[#333] font-semibold text-[18px] py-4 '>{e.title} </p>
+                            <p onClick={() => navigate(`/blog/${e.id}`)} className='text-[#333] font-semibold text-[18px] py-4 '>{e.title} </p>
                             <p className='text-[#888] pb-4 '>{e.by}</p>
                             <p className='text-[#888]'>{e.description}</p>
                         </div>
