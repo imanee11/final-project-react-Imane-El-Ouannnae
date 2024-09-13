@@ -26,6 +26,7 @@ export default {
     item5 : require ('../assets/images/item5.jpg'),
     blog1 :require ('../assets/images/blog-01.jpg'),
     blog2 :require ('../assets/images/blog-02.jpg'),
-    blog3 :require ('../assets/images/blog-03.jpg')
+    blog3 :require ('../assets/images/blog-03.jpg'),
+    aboutbanner : require ('../assets/images/about_top.webp'),
 
 }

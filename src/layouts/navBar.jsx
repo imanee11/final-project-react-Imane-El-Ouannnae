@@ -29,7 +29,11 @@ const NavBar = () => {
                         </li>
                         <li className='cursor-pointer text-[#333] text-[18px] '>Shop</li>
                         <li className='cursor-pointer text-[#333] text-[18px]'>Blog</li>
-                        <li className='cursor-pointer text-[#333] text-[18px]'>About</li>
+                        <li 
+                            onClick={() => {navigate("/about")}}
+                            className='cursor-pointer text-[#333] text-[18px]'>
+                            About
+                        </li>
                         <li className='cursor-pointer text-[#333] text-[18px]'>Contact</li>
                     </ul>
                 </div>
