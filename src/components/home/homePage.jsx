@@ -4,9 +4,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { images } from '../../constants';
 import { useNavigate } from 'react-router-dom';
+
+
 import { products } from '../../constants/data';
 import { items } from '../../constants/data';
-
+import { blog } from '../../constants/data';
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -150,14 +152,14 @@ const HomePage = () => {
                 <Slider {...settings}>
                     {/* first slide */}
                     <div className=''>
-                        <div className='flex items-center justify-center gap-9 w-[100%] pt-10 '>
+                        <div className='flex items-center justify-center gap-9 w-[100%] pt-10'>
                             {
                                 products.slice(0,4).map((e , i) => (
                                 <div className='flex flex-col w-[22%] '>
                                     <div className='relative group'>
                                         <img src={images[e.img]} alt="" className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75  ' />
                                         <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                            <button className='bg-white py-3 px-12 w-[200px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
+                                            <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
                                         </div>
                                     </div>
                                     <div className='pt-5'>
@@ -186,7 +188,7 @@ const HomePage = () => {
                                             )
                                         }
                                         <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                            <button className='bg-white py-3 px-12 w-[200px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
+                                            <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
                                         </div>
                                     </div>
                                     <div className='pt-5'>
@@ -234,7 +236,7 @@ const HomePage = () => {
                         <div className='text-center flex flex-col justify-center items-center pt-4'>
                             <p className='text-[#555] pb-2 text-[18px] '>{randomItems.name}</p>
                             <p className='text-[#555] pb-2 text-[18px]'>${randomItems.price}</p>
-                            <div className='flex gap-4 pb-4'>
+                            <div className='flex gap-4 pb-4 px-10'>
                                 <div className='flex flex-col justify-center items-center border-[1px] border-gray-400 p-2'>
                                     <p className='text-[#555] text-[18px] '>-2082</p>
                                     <p className='text-[#999]'>days</p>
@@ -254,6 +256,47 @@ const HomePage = () => {
                             </div>
                         </div>
 
+                    </div>
+                </div>
+            </section>
+
+
+            {/* section 4 blog */}
+            <section className='pt-16'>
+                <p className='text-center text-[30px] text-[#222222] font-bold'>OUR BLOG</p>
+                <div className='blogDivs flex justify-center pt-16 gap-8 '>
+                    {
+                        blog.map((e) => (
+                        <div className='w-[30%] overflow-hidden'>
+                            <div className='overflow-hidden'>
+                                <img src={images[e.pic]} alt="" className='w-[100%] transition-all duration-300 ease-in-out hover:scale-110'/>
+                            </div>
+                            <p className='text-[#333] font-semibold text-[18px] py-4 '>{e.title} </p>
+                            <p className='text-[#888] pb-4 '>{e.by}</p>
+                            <p className='text-[#888]'>{e.description}</p>
+                        </div>
+                        ))
+                    }
+
+                </div>
+            </section>
+
+
+            {/* section 5 */}
+            <section className='pt-40'>
+                <p className='text-center text-[30px] text-[#222222] font-bold'>@ FOLLOW US ON INSTAGRAM</p>
+                <div className='flex  items-center justify-center text-center px-20 py-28'>
+                    <div className=' pr-[5vw] pl-[5vw] py-5 '>
+                        <p className='text-[18px] text-[#555] '>Free Delivery Worldwide</p>
+                        <p className='italic text-[13px] text-[#888] '>Mirum est notare quam littera gothica</p>
+                    </div>
+                    <div className='border-r-[1px] border-l-[1px] border-gray-400 pr-[5vw] pl-[5vw] py-5 '>
+                        <p className='text-[18px] text-[#555] '>30 Days Return</p>
+                        <p className='italic text-[13px] text-[#888]'>Simply return it within 30 days for an exchange.</p>
+                    </div>
+                    <div className='pl-[5vw] pr-[5vw]'>
+                        <p className='text-[18px] text-[#555] '>Store Opening</p>
+                        <p className='italic text-[13px] text-[#888]'>Shop open from Monday to Sunday</p>
                     </div>
                 </div>
             </section>

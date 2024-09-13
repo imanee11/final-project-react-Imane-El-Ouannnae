@@ -23,5 +23,9 @@ export default {
     item2 : require ('../assets/images/item2.jpg'),
     item3 : require ('../assets/images/item3.jpg'),
     item4 : require ('../assets/images/item4.jpg'),
-    item5 : require ('../assets/images/item5.jpg')
+    item5 : require ('../assets/images/item5.jpg'),
+    blog1 :require ('../assets/images/blog-01.jpg'),
+    blog2 :require ('../assets/images/blog-02.jpg'),
+    blog3 :require ('../assets/images/blog-03.jpg')
+
 }
