@@ -54,7 +54,13 @@ const NavBar = () => {
 
                 {/* right div  */}
                 <div className='right-part flex items-center gap-10'>
-                    <div><FiUser size={30} className='text-gray-500'/></div>
+                    <div>
+                        <FiUser 
+                            onClick={() => {navigate("/user")}}
+                            size={30} 
+                            className='text-gray-500'
+                        />
+                    </div>
                     <div><BiCartDownload size={30} className='text-gray-500'/></div>
                 </div>
             </nav>
