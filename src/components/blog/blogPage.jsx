@@ -19,6 +19,7 @@ const BlogPage = () => {
                 </div>
             </section>
 
+            {/* section 2  */}
             <section className='flex gap-12 py-16 px-12'>
                 {/* left part */}
                 <div className='w-[70%] '>
