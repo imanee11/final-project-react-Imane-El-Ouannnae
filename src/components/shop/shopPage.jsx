@@ -3,8 +3,11 @@ import { images } from '../../constants';
 import { FaSearch } from 'react-icons/fa'
 
 import { products } from '../../constants/data';
+import { useNavigate } from 'react-router-dom';
 
 const ShopPage = () => {
+    let navigate = useNavigate();
+
     return (
         <>
         <div className='pt-[14vh]'>
@@ -121,7 +124,7 @@ const ShopPage = () => {
                                     </div>
                                 </div>
                                 <div className='pt-5'>
-                                    <p className='text-[#555] pb-2 transition duration-500 hover:text-[#e65540] cursor-pointer '>{e.name}</p>
+                                    <p onClick={() => navigate(`/shop/${e.id}`)} className='text-[#555] pb-2 transition duration-500 hover:text-[#e65540] cursor-pointer '>{e.name}</p>
                                     {
                                         e.sale ? (
                                             <div className='flex gap-3'>

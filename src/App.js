@@ -7,6 +7,7 @@ import About from './pages/about';
 import Contact from './pages/contact';
 import Blog from './pages/blog';
 import Shop from './pages/shop';
+import ProductDetail from './components/shop/productDetail';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/shop' element={<Shop/>}/>
+        <Route path='/shop/:id' element={<ProductDetail/>}/>
       </Routes>
       <Footer/>
     </>

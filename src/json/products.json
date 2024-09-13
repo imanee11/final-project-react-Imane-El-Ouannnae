@@ -1,5 +1,6 @@
 [
     {
+      "id" : 1,
       "img": "img1",
       "name": "Item 1 Classic T-shirt",
       "description": "A timeless classic cotton t-shirt featuring a practical pocket for convenience. Soft and durable, perfect for everyday wear.",
@@ -8,6 +9,7 @@
       "reduction": 0
     },
     {
+      "id" : 2,
       "img": "img2",
       "name": "Item 2 Elegant Sleeve",
       "description": "A refined long sleeve button-down shirt with a sleek design. Ideal for formal occasions or a smart-casual look.",
@@ -16,6 +18,7 @@
       "reduction": 0
     },
     {
+      "id" : 3,
       "img": "img3",
       "name": "Item 3 Premium T-shirt",
       "description": "Crafted from premium quality fabric, this crew neck t-shirt offers exceptional comfort and a modern fit. Ideal for any casual outing.",
@@ -24,6 +27,7 @@
       "reduction": 0
     },
     {
+      "id" : 4,
       "img": "img4",
       "name": "Item 4 Stylish Sleeve",
       "description": "A stylish long sleeve shirt with a slim fit, perfect for layering or wearing alone. Adds a touch of elegance to any outfit.",
@@ -32,6 +36,7 @@
       "reduction": 0
     },
     {
+      "id" : 5,
       "img": "img5",
       "name": "Item 5 Soft T-shirt",
       "description": "Soft touch v-neck t-shirt featuring a trendy graphic print. Perfect for adding a bit of flair to your casual wardrobe.",
@@ -40,6 +45,7 @@
       "reduction": 10.99
     },
     {
+      "id" : 6,
       "img": "img6",
       "name": "Item 6 Classic Sleeve",
       "description": "A classic long sleeve shirt with versatile roll-tab sleeves. Ideal for transitioning between seasons with style.",
@@ -48,6 +54,7 @@
       "reduction": 0
     },
     {
+      "id" : 7,
       "img": "img7",
       "name": "Item 7 High-End T-shirt",
       "description": "High-end performance t-shirt designed for active wear. Breathable and moisture-wicking, perfect for workouts and outdoor activities.",
@@ -56,6 +63,7 @@
       "reduction": 0
     },
     {
+      "id" : 8,
       "img": "img8",
       "name": "Item 8 Tailored Sleeve",
       "description": "Sophisticated tailored long sleeve dress shirt with a polished finish. Ideal for professional settings and formal events.",

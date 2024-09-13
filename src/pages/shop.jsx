@@ -4,7 +4,7 @@ import ShopPage from '../components/shop/shopPage';
 const Shop = () => {
     return (
         <>
-        <ShopPage/>
+            <ShopPage/>
         </>
     );
 };
