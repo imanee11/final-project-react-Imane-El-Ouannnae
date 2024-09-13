@@ -28,5 +28,6 @@ export default {
     blog2 :require ('../assets/images/blog-02.jpg'),
     blog3 :require ('../assets/images/blog-03.jpg'),
     aboutbanner : require ('../assets/images/about_top.webp'),
+    blogbanner : require ('../assets/images/blog_top.webp'),
 
 }

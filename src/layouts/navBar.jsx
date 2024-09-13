@@ -23,12 +23,18 @@ const NavBar = () => {
                 {/* links div */}
                 <div className='links'>
                     <ul className='flex items-center gap-10'>
-                        <li onClick={() => {navigate("/")}} className='flex items-center justify-between cursor-pointer text-[#333]'>
+                        <li 
+                            onClick={() => {navigate("/")}} 
+                            className='flex items-center justify-between cursor-pointer text-[#333] text-[18px]'>
                             Home
                             <div className='icon'><IoIosArrowForward/></div>
                         </li>
                         <li className='cursor-pointer text-[#333] text-[18px] '>Shop</li>
-                        <li className='cursor-pointer text-[#333] text-[18px]'>Blog</li>
+                        <li 
+                            onClick={() => {navigate("/blog")}}
+                            className='cursor-pointer text-[#333] text-[18px]'>
+                            Blog
+                        </li>
                         <li 
                             onClick={() => {navigate("/about")}}
                             className='cursor-pointer text-[#333] text-[18px]'>
