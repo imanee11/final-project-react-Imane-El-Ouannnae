@@ -29,7 +29,11 @@ const NavBar = () => {
                             Home
                             <div className='icon'><IoIosArrowForward/></div>
                         </li>
-                        <li className='cursor-pointer text-[#333] text-[18px] '>Shop</li>
+                        <li 
+                            onClick={() => {navigate("/shop")}}
+                            className='cursor-pointer text-[#333] text-[18px] '>
+                            Shop
+                        </li>
                         <li 
                             onClick={() => {navigate("/blog")}}
                             className='cursor-pointer text-[#333] text-[18px]'>

@@ -77,7 +77,6 @@ const BlogPage = () => {
                     <div className='flex gap-3'>
                         <button className='border-[1px] border-[#888] text-[#888] px-4 py-1 rounded-full transition duration-500 hover:text-[#e65540] hover:border-[#e65540] '>crafts</button>
                         <button className='border-[1px] border-[#888] text-[#888] px-4 py-1 rounded-full transition duration-500 hover:text-[#e65540] hover:border-[#e65540] '>street style</button>
-
                     </div>
 
                 </div>
