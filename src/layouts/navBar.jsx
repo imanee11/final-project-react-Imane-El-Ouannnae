@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FiUser } from "react-icons/fi";
 import { BiCartDownload } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
-import { VscClose } from "react-icons/vsc";
+
 
 
 const NavBar = () => {
@@ -34,7 +34,11 @@ const NavBar = () => {
                             className='cursor-pointer text-[#333] text-[18px]'>
                             About
                         </li>
-                        <li className='cursor-pointer text-[#333] text-[18px]'>Contact</li>
+                        <li 
+                            onClick={() => {navigate("/contact")}}
+                            className='cursor-pointer text-[#333] text-[18px]'>
+                            Contact
+                        </li>
                     </ul>
                 </div>
 
