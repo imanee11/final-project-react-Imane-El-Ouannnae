@@ -39,7 +39,7 @@ const BlogPage = () => {
                                 <p onClick={() => navigate(`/shop/${e.id}`)} className='text-[#333] font-semibold text-[18px] py-4 '>{e.title} </p>
                                 <p className='text-[#888] pb-4 '>{e.by}</p>
                                 <p className='text-[#888]'>{e.description}</p>
-                                <p className='flex items-center gap-2 pt-3 text-[#555] transition duration-500 hover:text-[#e65540] cursor-pointer'>Continue Reading <FaLongArrowAltRight/></p>
+                                <p onClick={() => navigate(`/blog/${e.id}`)} className='flex items-center gap-2 pt-3 text-[#555] transition duration-500 hover:text-[#e65540] cursor-pointer'>Continue Reading <FaLongArrowAltRight/></p>
                             </div>
                             ))
                         }

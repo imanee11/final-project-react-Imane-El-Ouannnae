@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { images } from '../../constants';
 import { useNavigate } from 'react-router-dom';
+import { MdOutlineDoneOutline } from "react-icons/md";
 
 
 import { products } from '../../constants/data';
@@ -53,6 +54,20 @@ const HomePage = () => {
         adaptiveHeight: true,
         nextArrow: <SampleNextArrow />,
         prevArrow: <SamplePrevArrow/>,
+    };
+
+    //! for the modal
+    const [modalOpen , setModalOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+
+    const handleAddToCart = (product) => {
+        setSelectedProduct (product)
+        setModalOpen (true)
+    };
+
+    const closeModal = () => {
+        setModalOpen (false)
+        setSelectedProduct (null)
     };
 
     return (
@@ -159,7 +174,7 @@ const HomePage = () => {
                                     <div className='relative group'>
                                         <img src={images[e.img]} alt="" className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75  ' />
                                         <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                            <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
+                                            <button onClick={() => handleAddToCart(e)} className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
                                         </div>
                                     </div>
                                     <div className='pt-5'>
@@ -188,7 +203,7 @@ const HomePage = () => {
                                             )
                                         }
                                         <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                            <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
+                                            <button onClick={() => handleAddToCart(e)} className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
                                         </div>
                                     </div>
                                     <div className='pt-5'>
@@ -300,6 +315,29 @@ const HomePage = () => {
                     </div>
                 </div>
             </section>
+
+            {/* modal part */}
+            {
+                modalOpen && (
+                    <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
+                        <div className='bg-[#fff] p-8 rounded-lg w-[30%] text-center '>
+                            {
+                                selectedProduct && (
+                                    <>
+                                    <div className='pb-5'><MdOutlineDoneOutline size={50} className='text-green-500 m-auto'/></div>
+                                    <p className='text-[#333] text-[16px] font-semibold pb-2 text-center'>{selectedProduct.name}</p>
+                                    <p className='text-[#333] text-[15px] pb-3 '>is added to cart</p>
+                                    </>
+                                )
+                            }
+                            <button onClick={closeModal} className='bg-[#e65540] text-white py-2 px-5 rounded-full hover:bg-[#292929]'>OK</button>
+
+                        </div>
+                        
+                    </div>
+                )
+
+            }
 
         </div>
 
