@@ -11,7 +11,7 @@ const BlogPage = () => {
 
     return (
         <>
-        <div className='pt-[14vh]'> 
+        <div className='pt-[11vh]'> 
             {/* section 1 */}
             <section>
                 <div className='relative'>

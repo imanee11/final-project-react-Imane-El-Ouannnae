@@ -59,7 +59,7 @@ const HomePage = () => {
         <>
         <div>
             {/* carousel part */}
-            <div className='overflow-hidden h-[100vh] pt-[14vh] '>
+            <div className='overflow-hidden h-[100vh] pt-[11vh] '>
             <Slider {...settings}>
                 <div className='relative'>
                     <img src={images.carousel1} alt="" className='h-[80vh] object-cover ' />

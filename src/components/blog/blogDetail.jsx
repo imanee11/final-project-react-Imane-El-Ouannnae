@@ -18,7 +18,7 @@ const BlogDetail = () => {
 
     return (
         <>
-        <div className='pt-[14vh] px-12'>
+        <div className='pt-[11vh] px-12'>
             <div className='pt-10'>
                 <div className='flex gap-2 items-center'>
                     <p onClick={() => {navigate("/")}} className='cursor-pointer text-[12px] text-[#555]'>Home</p>

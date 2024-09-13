@@ -4,7 +4,7 @@ import { images } from '../../constants';
 const AboutHome = () => {
     return (
         <>
-        <div className='pt-[14vh]'>
+        <div className='pt-[11vh]'>
             {/* first section */}
             <section>
                 <div className='relative'>
