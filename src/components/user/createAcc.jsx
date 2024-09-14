@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useContext, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
-import { TiUser } from "react-icons/ti";
+
+import { dataContext } from '../../App';
 
 
 const CreateAcc = () => {
     let navigate = useNavigate();
+
+    let {user , setUser} = useContext (dataContext);
+
+    const [firstName , setFisrtName] = useState('')
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const handleForm = (e) => {
+        e.preventDefault();
+
+        setUser ({firstName , lastName , email , password})
+
+        navigate ('/userdetail')
+    }
+    
 
     return (
         <>
@@ -21,18 +39,53 @@ const CreateAcc = () => {
             <div className='pt-5'>
                 <p className='text-[40px] text-[#212529]'>Create Account</p>
                 <p className='text-[18px] text-[#212529]'>Your Personal Details</p>
-                <form action="" className='pt-5 flex flex-col gap-3'>
+                <form onSubmit={handleForm} action="" className='pt-5 flex flex-col gap-3'>
                     <label htmlFor="" className='text-[#212529] text-[14px]'>First Name</label>
-                    <input type="text" name="" id="" placeholder='First Name' className='w-[80%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' />
+                    <input 
+                        onChange={(e) => setFisrtName(e.target.value)}
+                        value={firstName}
+                        type="text" 
+                        placeholder='First Name' 
+                        className='w-[80%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' 
+                    />
+
+
+
                     <label htmlFor="" className='text-[#212529] text-[14px]'>Last Name</label>
-                    <input type="text" name="" id="" placeholder='Last Name' className='w-[80%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' />
+                    <input 
+                        onChange={(e) => setLastName(e.target.value)}
+                        value={lastName}
+                        type="text" 
+                        placeholder='Last Name' 
+                        className='w-[80%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' 
+                    />
+
+
+
                     <label htmlFor="" className='text-[#212529] text-[14px]'>Email</label>
-                    <input type="email" name="" id="" placeholder='Email' className='w-[80%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' />
+                    <input 
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        type="email"
+                        placeholder='Email' 
+                        className='w-[80%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' 
+                    />
+
+
+
                     <label htmlFor="" className='text-[#212529] text-[14px]'>Password</label>
-                    <input type="password" name="" id="" placeholder='Password' className='w-[80%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' />
+                    <input 
+                        onChange={(e) => setPassword(e.target.value)}
+                        value={password}
+                        type="password"
+                        placeholder='Password' 
+                        className='w-[80%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' 
+                    />
+
 
                     <div className='flex items-center gap-2 pt-4'>
                         <button 
+                            type="submit"
                             className='bg-[#292929] text-[#fff] w-[150px] py-3 px-12 text-[12px] transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>
                             Create
                         </button>

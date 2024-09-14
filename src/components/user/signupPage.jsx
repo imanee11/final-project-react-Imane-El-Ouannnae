@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoIosArrowForward } from "react-icons/io";
+import { dataContext } from '../../App';
 
 const SignUpPage = () => {
     let navigate = useNavigate();
+
+    const {user} = useContext(dataContext)
+
+    const [email , setEmail] = useState('')
+    const [password , setPassword] = useState('')
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        if(email === user.email && password=== user.password){
+            navigate('/userdetail');
+        }else{
+            alert('invalid email or password')
+        }
+        
+    }
+
 
     return (
         <>
@@ -40,13 +58,30 @@ const SignUpPage = () => {
                         <p className='text-[#212529] text-[32px] '>Returning Customer</p>
                         <p className='text-[#888] text-[15px] font-semibold '>I am a returning customer</p>
                         <label htmlFor="" className='text-[#212529] text-[14px]'>Email</label>
-                        <input type="email" name="" id="" placeholder='Email' className='w-[100%]  border-[1px] border-gray-200 placeholder:text-[#555] text-[13px] p-4 ' />
+                        <input 
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            type="email" name="" id="" 
+                            placeholder='Email' 
+                            className='w-[100%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' 
+                        />
                         <label htmlFor="" className='text-[#212529] text-[14px]'>Password</label>
-                        <input type="password" name="" id="" placeholder='Password' className='w-[100%]  border-[1px] border-gray-200 placeholder:text-[#555] text-[13px] p-4 ' />
+                        <input 
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            type="password" 
+                            name="" id="" 
+                            placeholder='Password' 
+                            className='w-[100%]  border-[1px] border-gray-200 placeholder:text-gray-400 text-[13px] p-4 ' 
+                        />
                         <p className='text-[#666] text-[15px] transition duration-500 hover:text-[#e65540] cursor-pointer'>Forgot your password?</p>
 
                         <div className='flex items-center gap-2 pt-4'>
-                            <button className='bg-[#292929] text-[#fff] w-[150px] py-3 px-12 text-[12px] transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>SIGN IN</button>
+                            <button 
+                                onClick={handleLogin}
+                                className='bg-[#292929] text-[#fff] w-[150px] py-3 px-12 text-[12px] transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>
+                                SIGN IN
+                            </button>
                             <p onClick={() => {navigate("/")}}   className='text-[#666] text-[15px] transition duration-500 hover:text-[#e65540] cursor-pointer'><span className='text-[#212529] text-[12px]'>or</span> Return to Store</p>
                         </div>
                     </div>

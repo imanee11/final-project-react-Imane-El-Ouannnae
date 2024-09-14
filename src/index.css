@@ -9,16 +9,16 @@
 
 
 .icon{
-    display: none;
+    display: none !important;
 }
 .d-none{
-    display: none;
+    display: none !important;
 }
 .menu-icon{
-    display: none;
+    display: none !important ;
 }
 .close{
-    display: none;
+    display: none !important;
 }
 
 @media (max-width:376px) {
@@ -27,58 +27,58 @@
     nav{
         padding-left: 3vw !important;
         padding-right: 3vw !important;
-        position: relative;
+        position: relative !important;
         justify-content:start !important;
-        gap: 25vw;
+        gap: 25vw !important;
     }
     .links{
-        background-color: #e65540;
-        position: fixed;
-        top: 14vh;
-        right: 0;
-        left: 0;
-        padding: 0 3vw;
-        display: none;
+        background-color: #e65540 !important;
+        position: fixed !important;
+        top: 14vh !important;
+        right: 0 !important;
+        left: 0 !important;
+        padding: 0 3vw !important;
+        display: none !important;
     }
     .links ul{
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 0;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: start !important;
+        gap: 0 !important;
     }
     .links ul li {
-        color: #fff;
-        border-bottom: 1px #fff solid;
-        width: 100%;
-        padding: 2vh 0;
+        color: #fff !important;
+        border-bottom: 1px #fff solid !important;
+        width: 100% !important;
+        padding: 2vh 0 !important;
 
     }
     .icon{
-        display: flex;
+        display: flex !important;
     }
     .menu-icon{
-        display: flex;
-        position: absolute;
-        font-size: 30px;
-        right: 8vw;
+        display: flex !important;
+        position: absolute !important;
+        font-size: 30px !important;
+        right: 8vw !important;
     }
 
     .right-part {
-        display: flex;
+        display: flex !important;
         justify-content: start !important;
-        gap: 10px;
+        gap: 10px !important;
     }
     #switcher:checked  ~ .links {
-        display:block;
+        display:block !important;
     }
 
     /*? section 1 images */
     .imagesDiv{
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
     }
     .smallDivs{
-        width: 90%;
+        width: 90% !important;
     }
 
     /*? section 3 */
