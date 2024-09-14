@@ -7,6 +7,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 
 
+
 const NavBar = () => {
     let navigate = useNavigate();
 

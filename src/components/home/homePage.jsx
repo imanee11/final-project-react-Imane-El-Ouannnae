@@ -40,7 +40,10 @@ function SampleNextArrow(props) {
 
 
 const HomePage = () => {
+
     let navigate = useNavigate();
+
+    
 
     //! to select a random product
     const randomItemsIndex = Math.floor(Math.random() * items.length);
@@ -330,7 +333,7 @@ const HomePage = () => {
                                     </>
                                 )
                             }
-                            <button onClick={closeModal} className='bg-[#e65540] text-white py-2 px-5 rounded-full hover:bg-[#292929]'>OK</button>
+                            <button onClick={closeModal} className='bg-[#e65540] text-white py-2 px-5 rounded-full transition duration-500 hover:bg-[#292929]'>OK</button>
 
                         </div>
                         

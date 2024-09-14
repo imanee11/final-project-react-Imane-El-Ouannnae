@@ -26,7 +26,11 @@ const SignUpPage = () => {
                         <p className='text-[#212529] text-[32px] '>New Customer</p>
                         <p className='text-[#888] text-[15px] font-semibold '>Register Account</p>
                         <p className='text-[#888] text-[15px]'>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
-                        <button className='bg-[#292929] text-[#fff] w-[170px] py-3 px-12 text-[12px] transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>CONTINUE</button>
+                        <button 
+                            onClick={() => {navigate("/createaccount")}} 
+                            className='bg-[#292929] text-[#fff] w-[170px] py-3 px-12 text-[12px] transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>
+                            CONTINUE
+                        </button>
                     </div>
                 </div>
 
@@ -43,7 +47,7 @@ const SignUpPage = () => {
 
                         <div className='flex items-center gap-2 pt-4'>
                             <button className='bg-[#292929] text-[#fff] w-[150px] py-3 px-12 text-[12px] transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>SIGN IN</button>
-                            <p className='text-[#666] text-[15px] transition duration-500 hover:text-[#e65540] cursor-pointer'><span className='text-[#212529] text-[12px]'>or</span> Return to Store</p>
+                            <p onClick={() => {navigate("/")}}   className='text-[#666] text-[15px] transition duration-500 hover:text-[#e65540] cursor-pointer'><span className='text-[#212529] text-[12px]'>or</span> Return to Store</p>
                         </div>
                     </div>
                 </div>

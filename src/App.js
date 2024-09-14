@@ -10,6 +10,7 @@ import Shop from './pages/shop';
 import ProductDetail from './components/shop/productDetail';
 import BlogDetail from './components/blog/blogDetail';
 import User from './pages/user';
+import CreateAcc from './components/user/createAcc';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/shop/:id' element={<ProductDetail/>}/>
         <Route path='/blog/:id' element={<BlogDetail/>}/>
         <Route path='/user' element={<User/>}/>
+        <Route path='/createaccount' element={<CreateAcc/>}/>
       </Routes>
       <Footer/>
     </>
