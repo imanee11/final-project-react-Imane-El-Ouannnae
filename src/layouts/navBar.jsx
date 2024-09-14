@@ -1,15 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { images } from '../constants';
 import { useNavigate } from 'react-router-dom';
 import { FiUser } from "react-icons/fi";
 import { BiCartDownload } from "react-icons/bi";
 import { IoIosArrowForward } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 
 
+
+const Modal = ({isopen , isClose}) =>{
+    if(!isopen) return null;
+    return(
+        <div className='fixed inset-0 flex  z-[1000]'>
+            <div className='bg-[#fff] p-8 shadow-lg w-[25%] fixed top-[12vh] right-[2vw]'>
+                <div>
+                    <button></button>
+                    <button></button>
+                    <button onClick={isClose}><IoClose/></button>
+                </div>
+            </div>
+
+        </div>
+    )
+}
 
 
 const NavBar = () => {
     let navigate = useNavigate();
+
+    //! modal part
+    const [modalOpen , setModalOpen] = useState (false)
+
+    const handleCartClick = () => {
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
 
     return (
         <>
@@ -62,9 +90,17 @@ const NavBar = () => {
                             className='text-gray-500'
                         />
                     </div>
-                    <div><BiCartDownload size={30} className='text-gray-500'/></div>
+                    <div>
+                        <BiCartDownload 
+                        size={30} 
+                        className='text-gray-500'
+                        onClick={handleCartClick}
+                        />
+                    </div>
                 </div>
             </nav>
+
+            <Modal isopen={modalOpen} isClose={handleCloseModal}/>
             
         </>
     );

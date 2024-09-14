@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { images } from '../../constants';
 import { FaSearch } from 'react-icons/fa'
+import { MdOutlineDoneOutline } from "react-icons/md";
 
 import { products } from '../../constants/data';
 import { useNavigate } from 'react-router-dom';
 
 const ShopPage = () => {
     let navigate = useNavigate();
+
+        //! for the modal
+        const [modalOpen , setModalOpen] = useState(false);
+        const [selectedProduct, setSelectedProduct] = useState(null);
+
+        const handleAddToCart = (product) => {
+            setSelectedProduct (product)
+            setModalOpen (true)
+        };
+    
+        const closeModal = () => {
+            setModalOpen (false)
+            setSelectedProduct (null)
+        };
+
+
+    //! filter product
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const flitredProduct = products.filter(product => 
+        product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
 
     return (
         <>
@@ -70,7 +93,14 @@ const ShopPage = () => {
                     </div>
 
                     <div className='relative'>
-                        <input type="text" name="" id="" className='w-[100%] border-[1px] border-gray-200 p-4 placeholder:text-[#555] text-[13px]' placeholder='Search all articles...'/>
+                        <input 
+                            type="text" 
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery (e.target.value) }
+                            name="" id="" 
+                            className='w-[100%] border-[1px] border-gray-200 p-4 placeholder:text-[#555] text-[13px]' 
+                            placeholder='Search all articles...'
+                        />
                         <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                     </div>
 
@@ -85,9 +115,9 @@ const ShopPage = () => {
                                 className="mt-2 py-2 px-5 border border-gray-200"
                             >
                                 <option value="" className='text-[#555] ' disabled >Select an option</option>
-                                <option value="option1" className='text-[#555] '>Option 1</option>
-                                <option value="option2" className='text-[#555] '>Option 2</option>
-                                <option value="option3" className='text-[#555] '>Option 3</option>
+                                <option value="option1" className='text-[#555] '>Best selling</option>
+                                <option value="option2" className='text-[#555] '>price low to high</option>
+                                <option value="option3" className='text-[#555] '>Price high to low</option>
                             </select>
 
                             <select
@@ -102,13 +132,13 @@ const ShopPage = () => {
                         </div>
 
                         <div>
-                            <p className='text-[#888] text-[13px]  '>Showing 1 to 6 of 8 items</p>
+                            <p className='text-[#888] text-[13px]  '>Showing 1 to 8 of 8 items</p>
                         </div>
                     </div>
 
                     <div className='flex flex-wrap pt-10 gap-8'>
                         {
-                            products.map((e) => (
+                            flitredProduct.map((e) => (
                             <div className='flex flex-col w-[30%] '>
                                 <div className='relative group'>
                                     <img src={images[e.img]} alt="" className='w-[100%] transition-all duration-300 ease-in-out group-hover:brightness-75  ' />
@@ -120,7 +150,7 @@ const ShopPage = () => {
                                         )
                                     }
                                     <div className='absolute top-[90%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                                        <button className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
+                                        <button onClick={() => handleAddToCart(e)} className='bg-white py-3 px-12 w-[210px] rounded-full text-black transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>ADD TO CART</button>
                                     </div>
                                 </div>
                                 <div className='pt-5'>
@@ -147,6 +177,28 @@ const ShopPage = () => {
 
 
             </section>
+                        {/* modal part */}
+                        {
+                modalOpen && (
+                    <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50'>
+                        <div className='bg-[#fff] p-8 rounded-lg w-[30%] text-center '>
+                            {
+                                selectedProduct && (
+                                    <>
+                                    <div className='pb-5'><MdOutlineDoneOutline size={50} className='text-green-500 m-auto'/></div>
+                                    <p className='text-[#333] text-[16px] font-semibold pb-2 text-center'>{selectedProduct.name}</p>
+                                    <p className='text-[#333] text-[15px] pb-3 '>is added to cart</p>
+                                    </>
+                                )
+                            }
+                            <button onClick={closeModal} className='bg-[#e65540] text-white py-2 px-5 rounded-full transition duration-500 hover:bg-[#292929]'>OK</button>
+
+                        </div>
+                        
+                    </div>
+                )
+
+            }
         </div>
             
         </>
