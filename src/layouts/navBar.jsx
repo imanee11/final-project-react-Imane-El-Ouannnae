@@ -9,14 +9,22 @@ import { IoClose } from "react-icons/io5";
 
 
 const Modal = ({isopen , isClose}) =>{
+
+    let navigate = useNavigate();
+
+
     if(!isopen) return null;
     return(
         <div className='fixed inset-0 flex  z-[1000]'>
-            <div className='bg-[#fff] p-8 shadow-lg w-[25%] fixed top-[12vh] right-[2vw]'>
-                <div>
-                    <button></button>
-                    <button></button>
-                    <button onClick={isClose}><IoClose/></button>
+            <div className='bg-[#fff] p-8 shadow-lg w-[30%] fixed top-[12vh] right-[2vw]'>
+            <div className='text-end flex justify-end items-end'>
+                <button onClick={isClose}  className=''><IoClose size={20}/></button>
+            </div>
+
+                <div className='flex justify-between pt-5 '>
+                    
+                    <button onClick={() => {navigate("/cart")}} className='bg-[#222] py-3 px-12  rounded-full text-[#fff] transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>View Cart</button>
+                    <button className='bg-[#222] py-3 px-12  rounded-full text-[#fff] transition duration-500  hover:bg-[#e65540] hover:text-[#fff]'>CheckOut</button>
                 </div>
             </div>
 

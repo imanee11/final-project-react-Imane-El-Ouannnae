@@ -12,7 +12,7 @@ import BlogDetail from './components/blog/blogDetail';
 import User from './pages/user';
 import CreateAcc from './components/user/createAcc';
 import UserDetail from './components/user/userDetail';
-
+import Cart from './pages/cart'
 export const dataContext = createContext();
 
 const App = () => {
@@ -38,6 +38,7 @@ const App = () => {
         <Route path='/user' element={<User/>}/>
         <Route path='/createaccount' element={<CreateAcc/>}/>
         <Route path='/userdetail' element={<UserDetail/>}/>
+        <Route path='/cart' element={<Cart/>}/>
       </Routes>
       <Footer/>
     </dataContext.Provider>

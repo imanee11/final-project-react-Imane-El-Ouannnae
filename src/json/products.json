@@ -6,6 +6,8 @@
       "description": "A timeless classic cotton t-shirt featuring a practical pocket for convenience. Soft and durable, perfect for everyday wear.",
       "price": 19.99,
       "sale": false,
+      "color" : "red",
+      "size" : "m",
       "reduction": 0
     },
     {
@@ -15,6 +17,8 @@
       "description": "A refined long sleeve button-down shirt with a sleek design. Ideal for formal occasions or a smart-casual look.",
       "price": 29.99,
       "sale": false,
+      "color" : "red",
+      "size" : "l",
       "reduction": 0
     },
     {
@@ -24,6 +28,8 @@
       "description": "Crafted from premium quality fabric, this crew neck t-shirt offers exceptional comfort and a modern fit. Ideal for any casual outing.",
       "price": 21.99,
       "sale": false,
+      "color" : "gray",
+      "size" : "xl",
       "reduction": 0
     },
     {
@@ -33,6 +39,8 @@
       "description": "A stylish long sleeve shirt with a slim fit, perfect for layering or wearing alone. Adds a touch of elegance to any outfit.",
       "price": 34.99,
       "sale": false,
+      "color" : "gray",
+      "size" : "s",
       "reduction": 0
     },
     {
@@ -42,6 +50,8 @@
       "description": "Soft touch v-neck t-shirt featuring a trendy graphic print. Perfect for adding a bit of flair to your casual wardrobe.",
       "price": 18.49,
       "sale": true,
+      "color" : "red",
+      "size" : "m",
       "reduction": 10.99
     },
     {
@@ -51,7 +61,9 @@
       "description": "A classic long sleeve shirt with versatile roll-tab sleeves. Ideal for transitioning between seasons with style.",
       "price": 27.99,
       "sale": false,
-      "reduction": 0
+      "reduction": 0,
+      "size" : "xl",
+      "color" : "black"
     },
     {
       "id" : 7,
@@ -60,7 +72,10 @@
       "description": "High-end performance t-shirt designed for active wear. Breathable and moisture-wicking, perfect for workouts and outdoor activities.",
       "price": 23.99,
       "sale": false,
+      "color" : "gray",
+      "size" : "s",
       "reduction": 0
+      
     },
     {
       "id" : 8,
@@ -69,6 +84,9 @@
       "description": "Sophisticated tailored long sleeve dress shirt with a polished finish. Ideal for professional settings and formal events.",
       "price": 39.99,
       "sale": false,
+      "color" : "red",
+      "size" : "m",
       "reduction": 0
+
     }
   ]

@@ -31,4 +31,5 @@ export default {
     blogbanner : require ('../assets/images/blog_top.webp'),
     shopbanner : require ('../assets/images/banner.webp'),
     avatar : require ('../assets/images/avatar.webp'),
+    carttop : require ('../assets/images/cart_top.webp')
 }

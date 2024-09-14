@@ -24,12 +24,17 @@ const ShopPage = () => {
         };
 
 
-    //! filter product
+    //! filter product by serach and color and size
     const [searchQuery, setSearchQuery] = useState('');
+    const [selectedColors, setSelectedColors] = useState([]);
+    const [selectedSizes, setSelectedSizes] = useState([]);
 
-    const flitredProduct = products.filter(product => 
-        product.name.toLowerCase().includes(searchQuery.toLowerCase())
-    )
+    const flitredProduct = products.filter(product => {
+        const search = product.name.toLowerCase().includes(searchQuery.toLowerCase())
+        const matchesColor = selectedColors.length === 0 || selectedColors.includes(product.color)
+        const matchesSize = selectedSizes.length === 0 || selectedSizes.includes(product.size)
+        return search && matchesColor && matchesSize;
+    })
 
     return (
         <>
@@ -59,7 +64,17 @@ const ShopPage = () => {
                     <div className='pb-10 flex flex-col gap-3'>
                         <p className='text-[#333] text-[22px] font-extrabold pb-5 '>color</p>
                         <div className='flex gap-2'>
-                            <input type="checkbox" />
+                            <input 
+                                type="checkbox"
+                                checked={selectedColors.includes('red', 'black' ,'gray')}
+                                onChange={() => {
+                                    setSelectedColors (prev => 
+                                        prev.includes('red', 'black' ,'gray')
+                                        ? prev.filter(c => c !== 'red', 'black' ,'gray')
+                                        : [...prev , 'red', 'black' ,'gray']
+                                    )
+                                }}
+                            />
                             <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">black</label>
                         </div>
                         <div className='flex gap-2'>
