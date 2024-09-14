@@ -7,7 +7,7 @@
       "price": 19.99,
       "sale": false,
       "color" : "red",
-      "size" : "m",
+      "size" : "M",
       "reduction": 0
     },
     {
@@ -18,7 +18,7 @@
       "price": 29.99,
       "sale": false,
       "color" : "red",
-      "size" : "l",
+      "size" : "L",
       "reduction": 0
     },
     {
@@ -29,7 +29,7 @@
       "price": 21.99,
       "sale": false,
       "color" : "gray",
-      "size" : "xl",
+      "size" : "XL",
       "reduction": 0
     },
     {
@@ -40,7 +40,7 @@
       "price": 34.99,
       "sale": false,
       "color" : "gray",
-      "size" : "s",
+      "size" : "S",
       "reduction": 0
     },
     {
@@ -51,7 +51,7 @@
       "price": 18.49,
       "sale": true,
       "color" : "red",
-      "size" : "m",
+      "size" : "M",
       "reduction": 10.99
     },
     {
@@ -62,7 +62,7 @@
       "price": 27.99,
       "sale": false,
       "reduction": 0,
-      "size" : "xl",
+      "size" : "XL",
       "color" : "black"
     },
     {
@@ -73,7 +73,7 @@
       "price": 23.99,
       "sale": false,
       "color" : "gray",
-      "size" : "s",
+      "size" : "S",
       "reduction": 0
       
     },
@@ -85,7 +85,7 @@
       "price": 39.99,
       "sale": false,
       "color" : "red",
-      "size" : "m",
+      "size" : "M",
       "reduction": 0
 
     }

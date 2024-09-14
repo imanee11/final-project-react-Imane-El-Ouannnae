@@ -63,48 +63,42 @@ const ShopPage = () => {
 
                     <div className='pb-10 flex flex-col gap-3'>
                         <p className='text-[#333] text-[22px] font-extrabold pb-5 '>color</p>
-                        <div className='flex gap-2'>
+                        {['black' , 'gray' , 'red'].map(color => (
+                            <div key={color} className='flex gap-2'>
                             <input 
                                 type="checkbox"
-                                checked={selectedColors.includes('red', 'black' ,'gray')}
+                                checked={selectedColors.includes(color)}
                                 onChange={() => {
                                     setSelectedColors (prev => 
-                                        prev.includes('red', 'black' ,'gray')
-                                        ? prev.filter(c => c !== 'red', 'black' ,'gray')
-                                        : [...prev , 'red', 'black' ,'gray']
+                                        prev.includes(color)
+                                        ? prev.filter(c => c !== color)
+                                        : [...prev , color]
                                     )
                                 }}
                             />
-                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">black</label>
-                        </div>
-                        <div className='flex gap-2'>
-                            <input type="checkbox" />
-                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">gray</label>
-                        </div>
-                        <div className='flex gap-2'>
-                            <input type="checkbox" />
-                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">red</label>
-                        </div>
+                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">{color}</label>
+                            </div>
+                        ))}
                     </div>
 
                     <div className='pb-10 flex flex-col gap-3'>
                         <p className='text-[#333] text-[22px] font-extrabold pb-5 '>size</p>
-                        <div className='flex gap-2'>
-                            <input type="checkbox" />
-                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">L</label>
-                        </div>
-                        <div className='flex gap-2'>
-                            <input type="checkbox" />
-                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">M</label>
-                        </div>
-                        <div className='flex gap-2'>
-                            <input type="checkbox" />
-                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">S</label>
-                        </div>
-                        <div className='flex gap-2'>
-                            <input type="checkbox" />
-                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">XL</label>
-                        </div>
+                        {['S' , 'L' , 'M' , 'XL'].map (size => (
+                            <div className='flex gap-2'>
+                            <input 
+                                type="checkbox" 
+                                checked={selectedSizes.includes(size)}
+                                onChange={() => {
+                                    setSelectedSizes (prev =>
+                                        prev.includes(size)
+                                        ? prev.filter(s => s !== size)
+                                        : [...prev , size]
+                                    )
+                                }}
+                            />
+                            <label className='text-[#666] cursor-pointer transition duration-500 hover:text-[#e65540] ' htmlFor="">{size}</label>
+                            </div>
+                        ))}
                     </div>
 
                     <div className='relative'>
